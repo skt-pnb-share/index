@@ -37,17 +37,25 @@ require("d3@5")
 {
   const groups = {
 
-"0-3": { x: 2*width/10, y: 1*height/6, color: "#FAF49A", cnt: 0, fullname: "HH:0-3" },
-"4-5": { x: 4*width/10, y: 1*height/6, color: "#ebd034", cnt: 0, fullname: "HH:4-5" },
-"6-7": { x: 5*width/10, y: 2*height/6, color: "#BEE5AA", cnt: 0, fullname: "HH:6-7" },
-"8-9": { x: 5*width/10, y: 5.8*height/10, color: "#93D1BA", cnt: 0, fullname: "HH:8-9" },
-"10-11": { x: 2*width/10, y: 7*height/10, color: "#79BACE", cnt: 0, fullname: "HH:10-11" },
-"12-13": { x: 4*width/10, y: 7*height/10, color: "#c4933d", cnt: 0, fullname: "HH:12-13" },
-"14-15": { x: 1*width/10, y: 2*height/6, color: "#79BACE", cnt: 0, fullname: "HH:14-15" },
-"16-24": { x: 1*width/10, y: 5.8*height/10, color: "#c41f2a", cnt: 0, fullname: "HH:16-24" },
-"comment1-1": { x: 3*width/10, y: 4.8*height/10, color: "#79BACE", fullname: "월 평균" },
-"comment1-2": { x: 3*width/10, y: 5.2*height/10, color: "#dbc3c5", fullname: "거주지 체류시간" },
-"comment2": { x: 2.3*width/10, y: 9.5*height/10, color: "#dbc3c5", fullname: "* 각 Point는 약 25만명의 회선에 대한 정보를 담고 있음" },
+"d_1": { x: 1.5*width/10, y: 1.5*height/10, color: "#79BACE", cnt: 0, fullname: "서울특별시" },
+"d_2": { x: 4*width/10, y: 1.5*height/10, color: "#79BACE", cnt: 0, fullname: "부산광역시" },
+"d_3": { x: 6.5*width/10, y: 1.5*height/10, color: "#79BACE", cnt: 0, fullname: "대구광역시" },
+"d_4": { x: 9*width/10, y: 1.5*height/10, color: "#79BACE", cnt: 0, fullname: "인천광역시" },
+"d_5": { x: 1.5*width/10, y: 9.5*height/10, color: "#79BACE", cnt: 0, fullname: "광주광역시" },
+"d_6": { x: 3.375*width/10, y: 9.5*height/10, color: "#79BACE", cnt: 0, fullname: "대전광역시" },
+"d_7": { x: 5.25*width/10, y: 9.5*height/10, color: "#79BACE", cnt: 0, fullname: "울산광역시" },
+"d_17": { x: 7.12*width/10, y: 9.5*height/10, color: "#79BACE", cnt: 0, fullname: "제주특별자치도" },
+"d_8": { x: 9*width/10, y: 9.5*height/10, color: "#79BACE", cnt: 0, fullname: "세종특별자치시" },
+"d_9": { x: 0.5*width/10, y: 2.5*height/10, color: "#79BACE", cnt: 0, fullname: "경기도" },
+"d_10": { x: 0.5*width/10, y: 4.5*height/10, color: "#79BACE", cnt: 0, fullname: "강원도" },
+"d_11": { x: 0.5*width/10, y: 6.5*height/10, color: "#79BACE", cnt: 0, fullname: "충청북도" },
+"d_12": { x: 0.5*width/10, y: 8.5*height/10, color: "#79BACE", cnt: 0, fullname: "충청남도" },
+"d_13": { x: 10*width/10, y: 2.5*height/10, color: "#79BACE", cnt: 0, fullname: "전라북도" },
+"d_14": { x: 10*width/10, y: 4.5*height/10, color: "#79BACE", cnt: 0, fullname: "전라남도" },
+"d_15": { x: 10*width/10, y: 6.5*height/10, color: "#79BACE", cnt: 0, fullname: "경상북도" },
+"d_16": { x: 10*width/10, y: 8.5*height/10, color: "#79BACE", cnt: 0, fullname: "경상남도" },
+"d_99": { x: 5*width/10, y: 5.5*height/10, color: "#dbc3c5", cnt: 0, fullname: "집돌이 집순이" },
+"comment2": { x: 2.3*width/10, y: 11*height/10, color: "#dbc3c5", fullname: "* 각 Point는 약 2만5천명의 회선에 대한 정보를 담고 있음" },
 
 
 
@@ -206,11 +214,11 @@ html`<!DOCTYPE html>
     // Update counters.
     svg.selectAll('.grpcnt').text(d => groups[d].cnt);
     // Do it again.
-    d3.timeout(timer, 500);
+    d3.timeout(timer, 2000);
   } // @end timer()
 
   // Start things off after a few seconds.
-  d3.timeout(timer, 2000);
+  d3.timeout(timer, 4000);
 
   return svg.node()
 }
