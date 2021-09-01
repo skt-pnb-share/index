@@ -4,7 +4,7 @@ export default function define(runtime, observer) {
   const fileAttachments = new Map([["stages.tsv",new URL("./files/data",import.meta.url)],["stages.csv",new URL("./files/data",import.meta.url)]]);
   main.builtin("FileAttachment", runtime.fileAttachments(name => fileAttachments.get(name)));
   main.variable(observer()).define(["md"], function(md){return(
-md`# CASE 1 : 코로나 이후 집 체류시간 변화`
+md`# CASE 1 : 시도별 여행지수`
 )});
   main.variable(observer()).define(["FileAttachment"], function(FileAttachment){return(
 FileAttachment("stages.csv")
@@ -37,24 +37,24 @@ require("d3@5")
 {
   const groups = {
 
-"d_1": { x: 1.5*width/10, y: 1.5*height/10, color: "#79BACE", cnt: 0, fullname: "서울특별시" },
-"d_2": { x: 4*width/10, y: 1.5*height/10, color: "#79BACE", cnt: 0, fullname: "부산광역시" },
-"d_3": { x: 6.5*width/10, y: 1.5*height/10, color: "#79BACE", cnt: 0, fullname: "대구광역시" },
-"d_4": { x: 9*width/10, y: 1.5*height/10, color: "#79BACE", cnt: 0, fullname: "인천광역시" },
-"d_5": { x: 1.5*width/10, y: 9.5*height/10, color: "#79BACE", cnt: 0, fullname: "광주광역시" },
-"d_6": { x: 3.375*width/10, y: 9.5*height/10, color: "#79BACE", cnt: 0, fullname: "대전광역시" },
-"d_7": { x: 5.25*width/10, y: 9.5*height/10, color: "#79BACE", cnt: 0, fullname: "울산광역시" },
-"d_17": { x: 7.12*width/10, y: 9.5*height/10, color: "#79BACE", cnt: 0, fullname: "제주특별자치도" },
-"d_8": { x: 9*width/10, y: 9.5*height/10, color: "#79BACE", cnt: 0, fullname: "세종특별자치시" },
-"d_9": { x: 0.5*width/10, y: 2.5*height/10, color: "#79BACE", cnt: 0, fullname: "경기도" },
-"d_10": { x: 0.5*width/10, y: 4.5*height/10, color: "#79BACE", cnt: 0, fullname: "강원도" },
-"d_11": { x: 0.5*width/10, y: 6.5*height/10, color: "#79BACE", cnt: 0, fullname: "충청북도" },
-"d_12": { x: 0.5*width/10, y: 8.5*height/10, color: "#79BACE", cnt: 0, fullname: "충청남도" },
-"d_13": { x: 10*width/10, y: 2.5*height/10, color: "#79BACE", cnt: 0, fullname: "전라북도" },
-"d_14": { x: 10*width/10, y: 4.5*height/10, color: "#79BACE", cnt: 0, fullname: "전라남도" },
-"d_15": { x: 10*width/10, y: 6.5*height/10, color: "#79BACE", cnt: 0, fullname: "경상북도" },
-"d_16": { x: 10*width/10, y: 8.5*height/10, color: "#79BACE", cnt: 0, fullname: "경상남도" },
-"d_99": { x: 5*width/10, y: 5.5*height/10, color: "#dbc3c5", cnt: 0, fullname: "집돌이 집순이" },
+"d_1": { x: 5*width/10, y: 5*height/10, color: "#FCFBFD", cnt: 0, fullname: "서울특별시" },
+"d_2": { x: 5*width/10, y: 5*height/10, color: "#F781BF", cnt: 0, fullname: "부산광역시" },
+"d_3": { x: 5*width/10, y: 5*height/10, color: "#B8E186", cnt: 0, fullname: "대구광역시" },
+"d_4": { x: 5*width/10, y: 5*height/10, color: "#FDB462", cnt: 0, fullname: "인천광역시" },
+"d_5": { x: 5*width/10, y: 5*height/10, color: "#AE017E", cnt: 0, fullname: "광주광역시" },
+"d_6": { x: 5*width/10, y: 5*height/10, color: "#CC4C02", cnt: 0, fullname: "대전광역시" },
+"d_7": { x: 5*width/10, y: 5*height/10, color: "#F0027F", cnt: 0, fullname: "울산광역시" },
+"d_8": { x: 5*width/10, y: 5*height/10, color: "#49006A", cnt: 0, fullname: "세종특별자치시" },
+"d_9": { x: 5*width/10, y: 5*height/10, color: "#2D004B", cnt: 0, fullname: "경기도" },
+"d_10": { x: 5*width/10, y: 5*height/10, color: "#40004B", cnt: 0, fullname: "강원도" },
+"d_11": { x: 5*width/10, y: 5*height/10, color: "#6A51A3", cnt: 0, fullname: "충청북도" },
+"d_12": { x: 5*width/10, y: 5*height/10, color: "#FEB24C", cnt: 0, fullname: "충청남도" },
+"d_13": { x: 5*width/10, y: 5*height/10, color: "#CAB2D6", cnt: 0, fullname: "전라북도" },
+"d_14": { x: 5*width/10, y: 5*height/10, color: "#ECE2F0", cnt: 0, fullname: "전라남도" },
+"d_15": { x: 5*width/10, y: 5*height/10, color: "#D4B9DA", cnt: 0, fullname: "경상북도" },
+"d_16": { x: 5*width/10, y: 5*height/10, color: "#FC8D62", cnt: 0, fullname: "경상남도" },
+"d_17": { x: 5*width/10, y: 5*height/10, color: "#FD8D3C", cnt: 0, fullname: "제주특별자치도" },
+"d_99": { x: 2*width/10, y: 2*height/10, color: "#DFC27D", cnt: 0, fullname: "거주지역 체류" },
 "comment2": { x: 2.3*width/10, y: 11*height/10, color: "#dbc3c5", fullname: "* 각 Point는 약 2만5천명의 회선에 대한 정보를 담고 있음" },
 
 
@@ -106,14 +106,14 @@ d3.keys(people).map(function(d) {
 html`<!DOCTYPE html>
 <head>
   <meta charset="utf-8">
-  <title> 코로나 이후 집 체류시간 변화</title>
+  <title> 시도별 여행지</title>
   <link rel="stylesheet" href="style/style.css" type="text/css" media="screen" />
 </head>
 
 <div id="main-wrapper">
-  <h1 id="timecount"> 2019년 05월 M + <span class="cnt">0</span></h2>
+  <h1 id="timecount"> 2018년 11월 W + <span class="cnt">0</span></h2>
   <div id="chart"></div>
-  <h4>  - 데이터 활용 기간 : 2019.05 - 2021.04</h4>
+  <h4>  - 데이터 활용 기간 : 2018.11 - 현재</h4>
 </div><!-- @end #main-wrapper -->
 `
 )});
@@ -214,11 +214,11 @@ html`<!DOCTYPE html>
     // Update counters.
     svg.selectAll('.grpcnt').text(d => groups[d].cnt);
     // Do it again.
-    d3.timeout(timer, 2000);
+    d3.timeout(timer, 1000);
   } // @end timer()
 
   // Start things off after a few seconds.
-  d3.timeout(timer, 4000);
+  d3.timeout(timer, 1000);      // <- 2021.08.17 ㅇㅣ것이 이동?
 
   return svg.node()
 }
